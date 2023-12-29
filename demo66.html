@@ -1,0 +1,60 @@
+<html>
+<head>
+<style>
+body
+{
+padding: 100px;
+margin-left: 400px;
+background:#e8e8ff;
+}
+div
+{
+height: 200px;
+width: 300px;
+border: 20px groove green;
+text-align: center;    
+padding: 45px; 
+background:lightblue;
+}
+.s
+{
+padding:5px 40px;
+background:white;
+}
+</style>
+</head>
+<body>
+<div>
+<s id="one" class="s"></s><br><br>
+<input type="text" id="two">
+<p></p>
+<button onclick="demo()">MATCH</button>
+</div>
+<script>
+var x="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+var l=x.length
+var c=""
+for (let i = 0; i <6; i++) {
+var z=Math.floor(Math.random()*l)
+c=c+x.charAt(z)    
+}
+var one=  document.querySelector("#one")
+one.innerText=c
+function demo()
+{
+var two= document.querySelector("#two")
+var p= document.querySelector("p")
+if(one.value==two.value)
+{
+p.innerHTML="Valid Captcha"
+p.style.color="green"
+}
+else
+{
+p.innerHTML="Invalid Captcha"
+p.style.color="red"
+}
+}        
+</script> 
+</body>
+</html>
